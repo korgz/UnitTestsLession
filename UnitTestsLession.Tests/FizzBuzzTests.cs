@@ -13,10 +13,15 @@ namespace UnitTestsLession.Tests
     /// </summary>
     public class FizzBuzzTests
     {
-        [Fact]
-        public void GetFizzBuzzString_WhenNumberDividesBy3_ThenReturnsFizz()
+        [Theory]
+        [InlineData(3)]
+        [InlineData(6)]
+        [InlineData(9)]
+        [InlineData(12)]
+
+        public void GetFizzBuzzString_WhenNumberDividesBy3_ThenReturnsFizz(int num)
         {
-            string response = FizzBuzz.GetFizzBuzzString(3);
+            string response = FizzBuzz.GetFizzBuzzString(num);
 
             Assert.Equal("Fizz", response);
         }
